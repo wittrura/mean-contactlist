@@ -7,8 +7,8 @@ import { Contact } from './contact';
 
 @Injectable()
 export class ContactService {
-  // private contactsUrl = '/api/contacts';
-  private contactsUrl = 'https://polar-springs-94835.herokuapp.com/api/contacts';
+  private contactsUrl = '/api/contacts';
+  // private contactsUrl = 'https://polar-springs-94835.herokuapp.com/api/contacts';
 
   constructor(private http: Http) { }
 
@@ -40,7 +40,7 @@ export class ContactService {
 
   // put("/api/contacts/:id")
   updateContact(putContact: Contact): Promise<void | Contact> {
-    return this.http.delete(this.contactsUrl + '/' + putContact._id, putContact)
+    return this.http.put(this.contactsUrl + '/' + putContact._id, putContact)
                .toPromise()
                .then(response => response.json() as Contact)
                .catch(this.handleError);

@@ -5,7 +5,7 @@
   </div>
 </div>
 <div *ngIf="contact" class="row">
-  <form class="col-md-12">
+  <form class="col-md-12" #heroForm="ngForm">
     <div class="form-group">
       <label for="contact-name">Name</label>
       <input class="form-control" name="contact-name" [(ngModel)]="contact.name" placeholder="Name"/>
