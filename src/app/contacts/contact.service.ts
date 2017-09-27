@@ -7,7 +7,8 @@ import { Contact } from './contact';
 
 @Injectable()
 export class ContactService {
-  private contactsUrl = '/api/contacts';
+  // private contactsUrl = '/api/contacts';
+  private contactsUrl = 'https://polar-springs-94835.herokuapp.com/api/contacts';
 
   constructor(private http: Http) { }
 
