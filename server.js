@@ -108,7 +108,7 @@ app.put("/api/contacts/:id", function(req, res){
       updateDoc._id = req.params.id;
       res.status(200).json(updateDoc);
     }
-  }
+  });
 });
 
 app.delete("/api/contacts/:id", function(req, res){
