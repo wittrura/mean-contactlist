@@ -13,6 +13,10 @@ var app = express();
 
 app.use(bodyParser.json());
 
+// Create link to Angular build directory
+var distDir = __dirname + "/dist/";
+app.use(express.static(distDir));
+
 // Connect to the database before starting
 // the application server
 mongodb.MongoClient.connect(process.env.MONGODB_URI, function(err, database) {
