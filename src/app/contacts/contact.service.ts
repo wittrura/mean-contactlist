@@ -22,7 +22,9 @@ export class ContactService {
 
   // post("/api/contacts")
   createContact(newContact: Contact): Promise<void | Contact> {
-    return this.http.get(this.contactsUrl, newContact)
+    console.log('creating new contact');
+    console.log(newContact);
+    return this.http.post(this.contactsUrl, newContact)
                .toPromise()
                .then(response => response.json() as Contact)
                .catch(this.handleError);
