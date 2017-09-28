@@ -22,8 +22,6 @@ export class ContactService {
 
   // post("/api/contacts")
   createContact(newContact: Contact): Promise<void | Contact> {
-    console.log('creating new contact');
-    console.log(newContact);
     return this.http.post(this.contactsUrl, newContact)
                .toPromise()
                .then(response => response.json() as Contact)
